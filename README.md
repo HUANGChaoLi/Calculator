@@ -30,14 +30,14 @@ factor => (expression) | - factor | id
 |:----:|-------:|--------:|-------:|--------:|-------:|
 |FIRST |-, id, ( |+, - |-, id, ( |*, / |-, id, ( |
 |FOLLOW|$, ) |$, ) |$, ), +, - |$, ), +, - |$, ), +, -, *, / |
-|  id  |  | |F T' | |id |
+|  id  |T E' | |F T' | |id |
 |  (   |T E' | |F T' | |(E) |
 |  )   | |epsilon | |epsilon | |
 |  +   | |+ T E'| |epsilon | |
 |  -   |T E' |- T E' |F T'|epsilon |-F |
 |  *   | | | |* F T' | |
 |  /   | | | |/ F T' | |
-|  $  |T E' | epsilon | |epsilon | |
+|  $   | | epsilon | |epsilon | |
 
 ## 自顶向下的SDD语义规则
 
